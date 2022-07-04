@@ -1,16 +1,19 @@
-let l1 = [3, 6, 8, 0];
-let l2 = [3, 6, 8, 0];
-let num1 = 0;
-let num2 = 0;
-for(let i = 0; i < l1.length; i++) {
-    num1 += l1[i] * 10**(l1.length - i - 1);
-}
-for(let i = 0; i < l2.length; i++) {
-    num2 += l1[i] * 10**(l2.length - i - 1);
-}
-let str = String(num1 + num2);
-let result = [];
-for (let i = 0; i < str.length; i++) {
-    result[i] = Number(str[str.length - i - 1]);
-}
-console.log(result);
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+const movieName1 = prompt('Один из последних просмотренных фильмов?', '');
+const movieRate1 = prompt('На сколько бы вы его оценили?', '');
+const movieName2 = prompt('Один из последних просмотренных фильмов?', '');
+const movieRate2 = prompt('На сколько бы вы его оценили?', '');
+
+personalMovieDB.movies[movieName1] = movieRate1;
+personalMovieDB.movies[movieName2] = movieRate2;
+
+console.log(personalMovieDB);
